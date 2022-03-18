@@ -5,16 +5,21 @@ from gilded_rose import Item, GildedRose
 
 class GildedRoseTest(unittest.TestCase):
     def test_foo(self):
-        print("Testing foo")
         items = [Item("foo", 0, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEquals("foo", items[0].name)
         self.assertEquals(0, items[0].quality)
         self.assertEquals(-1, items[0].sell_in)
+
+        items = [Item("foo", 1, 1)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals("foo", items[0].name)
+        self.assertEquals(0, items[0].quality)
+        self.assertEquals(0, items[0].sell_in)
     
     def test_aged_brie(self):
-        print("Testing Brie")
         items = [Item("Aged Brie", 10, 5)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
@@ -44,7 +49,6 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEquals(4, items[0].quality)
 
     def test_concert_tickets(self):
-        print("Testing concert tix")
         items = [Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
@@ -81,7 +85,6 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEquals(0, items[0].quality)
 
     def test_the_vest(self):
-        print("Testing vest")
         items = [Item("+5 Dexterity Vest", 10, 20)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
@@ -115,7 +118,7 @@ class GildedRoseTest(unittest.TestCase):
         items = [Item("Conjured Mud Pie", 3, 1)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        self.assertEquals(" Conjured Mud Pie", items[0].name)
+        self.assertEquals("Conjured Mud Pie", items[0].name)
         self.assertEquals(2, items[0].sell_in)
         self.assertEquals(0, items[0].quality)
 
