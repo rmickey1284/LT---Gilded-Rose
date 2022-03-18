@@ -28,6 +28,7 @@ class GildedRose(object):
                     # if sell_in is 5 or less, add another quality - three total
                     if item.sell_in < 6 and item.quality < 50:
                         item.quality += 1
+                    # passes are worthless if the concert already happened
                     if item.sell_in < 1:
                         item.quality = 0
             else:
