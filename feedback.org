@@ -11,6 +11,10 @@
   that I am better off extracting that code into a function. I then name that function based on what the comment that I
   want to make is.
 
+  I Like the idea of separating the logic for the different types of items into their own blocks. I feel you may be able
+  to take this a step further and have those code blocks separated to their own functions as well. This would allow you
+  test the code of each type of item in isolation and really narrow down on the logic that you are looking for. 
+
 * Tests
   I have not seen this structure of testing before. It appears that you are grouping your tests based on the item types.
   However, you aren't specifying the scenarios for each that you are testing. I think that had you written the scenarios
