@@ -4,7 +4,8 @@ import unittest
 from gilded_rose import Item, GildedRose
 
 class GildedRoseTest(unittest.TestCase):
-    def test_foo(self):
+
+    def test_basic_item_decrements_sellin_and_doesnt_drop_quality_below_0(self):
         items = [Item("foo", 0, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
@@ -12,6 +13,7 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEquals(0, items[0].quality)
         self.assertEquals(-1, items[0].sell_in)
 
+    def test_basic_item_decrements_sellin_and_quality(self):
         items = [Item("foo", 1, 1)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
